@@ -25,3 +25,8 @@ button {
   padding: 4px 8px;
   border-radius: 8px;
 }
+
+input.submitted:invalid {
+  appearance: none;
+  border: 1px solid red;
+}
