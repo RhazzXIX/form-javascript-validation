@@ -52,13 +52,12 @@ function checkPasswordPattern() {
     return true;
   }
   password.setCustomValidity(
-    "Your password must contain capital and small letters, numbers ,and special characters."
+    "Your password must contain capital and small letters, numbers, and special characters."
   );
   return false;
 }
 
 function confirmPassword() {
-  console.log(password.value === confirmPWord.value)
   if (password.value === confirmPWord.value) {
     confirmPWord.setCustomValidity("");
     return true;
@@ -69,12 +68,23 @@ function confirmPassword() {
   return false;
 }
 
-
+function removeEntries() {
+  const options = document.querySelectorAll('option');
+  let selected
+  options.forEach((option) => {
+    if (option.selected === true) selected = option
+  })
+  fName.value = "";
+  lName.value = "";
+  eMail.value = "";
+  country.selectedIndex = 0;
+  zipCode.value = "";
+  password.value = "";
+  confirmPWord.value = "";
+}
 
 function validateForm(event) {
   event.stopPropagation();
-  checkPasswordPattern();
-  confirmPassword();
   if (!fName.checkValidity()) {
     fName.classList.add("submitted");
     fName.reportValidity();
@@ -84,16 +94,12 @@ function validateForm(event) {
     eMail.reportValidity();
   } else if (!checkZipCode(zipCode)) {
     zipCode.reportValidity("");
-  } else if (!password.checkValidity()) {
-    password.reportValidity();
-    checkPasswordPattern()
   } else if (!checkPasswordPattern()) {
     password.reportValidity();
-  } else if (!confirmPWord.checkValidity()) {
-    confirmPWord.reportValidity();
   } else if (!confirmPassword()) {
     confirmPWord.reportValidity();
   } else {
+    removeEntries();
     alert("Yey!!!");
   }
   event.preventDefault();
