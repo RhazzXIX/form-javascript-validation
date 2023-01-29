@@ -6,6 +6,43 @@
     <script src="./main.js" defer></script>
   </head>
   <body>
+    <form action="" method="get" novalidate>
+      <fieldset>
+        <legend>Validation Test</legend>
+        <label for="fName">First Name: 
+          <input type="text" name="fName" id="fName" required />
+        </label>
+        <label for="lName">Last Name:
+          <input type="text" name="lName" id="lName" required />
+        </label>
+        <label for="mail">
+          Email:
+          <input type="email" name="email" id="mail" required />
+        </label>
+        <label for="country">
+          Country: 
+          <select name="country" id="country">
+            <option value="JP">Japan</option>
+            <option value="KR">South Korea</option>
+            <option value="SG">Singapore</option>
+          </select>
+        </label>
+        <label for="zip">
+          Zip Code: 
+          <input type="text" name="zip" id="">
+        </label>
+        <label for="pWord">
+          Password: 
+          <input type="password" name="password" id="pWord" required/>
+        </label>
+        <label for="cPWord">
+          Confirm Password: 
+          <input type="password" name="confirm pWord" id="cPWord" required/>
+        </label>
+
+        <button type="submit">Submit</button>
+      </fieldset>
+    </form>
     
   </body>
 </html>
