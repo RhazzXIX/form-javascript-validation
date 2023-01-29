@@ -1,0 +1,27 @@
+:root {
+  /* font-size: 16px; */
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  /* appearance: none; */
+  width: max-content;
+  align-self: flex-end;
+  padding: 4px 8px;
+  border-radius: 8px;
+}
